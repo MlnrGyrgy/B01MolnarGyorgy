@@ -19,11 +19,25 @@ namespace B01MolnarGyorgy
                 adatok[i] = int.Parse(olvas.ReadLine());
                 //Console.WriteLine(adatok[i]);
                 i++;
-            }     
+            }
+            olvas.Close();
+        }
+        static void Minimumertek()
+        {
+            int min = 10000;
+            for (int i = 1; i < adatok.Length; i++)
+            {
+                if (min > adatok[i])
+                {
+                    min = adatok[i];
+                }
+            }
+            Console.WriteLine(min);
         }
         static void Main(string[] args)
         {
             Beolvasas();
+            Minimumertek();
             Console.ReadKey();
         }
     }
