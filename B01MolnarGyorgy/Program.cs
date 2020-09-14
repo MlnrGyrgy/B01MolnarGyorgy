@@ -27,18 +27,33 @@ namespace B01MolnarGyorgy
             int min = 10000;
             for (int i = 1; i < adatok.Length; i++)
             {
-                if (min > adatok[i])
+                if (min > adatok[i] && adatok[i] != 0)
                 {
                     min = adatok[i];
                 }
             }
-            Console.WriteLine(min);
+            Console.WriteLine("{0} a legkisebb szám", min);
+        }
+        static void Egyediek()
+        {
+            
+            int csakottel = 0;
+            for (int i = 0; i < adatok.Length; i++)
+            {
+                if (adatok[i] % 5 == 0 && adatok[i] % 4 != 0)
+                {
+                    csakottel++;
+                }
+            }
+            Console.WriteLine("Öttel osztható, de néggyel nem osztható számok: {0}", csakottel);;
         }
         static void Main(string[] args)
         {
             Beolvasas();
             Minimumertek();
+            Egyediek();
             Console.ReadKey();
+
         }
     }
 }
